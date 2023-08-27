@@ -15,7 +15,7 @@ fig = figure;
 subplot(3,3,1)
 
 kshh.serg = pcolorgen("Processed Data/Interpolated/Thwaites_sh_ontoref_v3.txt");
-title("S & H 2013")
+title("S & H")
 sgl = sgtitle("Deviation in Mean Basal Shear Stress, High-High");
 sgl.FontSize = 16;
 

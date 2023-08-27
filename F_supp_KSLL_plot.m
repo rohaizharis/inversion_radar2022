@@ -11,7 +11,7 @@ fig = figure;
 
 subplot(3,3,1)
 plotfig(ksll.serg)
-title('S & H 2013')
+title('S & H')
 %sgtitle('2-Sample KS Test (Low-Low)')
 
 subplot(3,3,2)

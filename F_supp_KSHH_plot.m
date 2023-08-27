@@ -10,7 +10,7 @@ load('kshh_data.mat');
 fig = figure;
 subplot(3,3,1)
 plotfig(kshh.serg)
-title('S & H 2013')
+title('S & H')
 % sgtitle('2-Sample KS Test (High-High)')
 
 subplot(3,3,2)

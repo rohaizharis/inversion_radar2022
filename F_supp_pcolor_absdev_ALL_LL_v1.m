@@ -11,7 +11,7 @@ fig = figure;
 subplot(3,3,1)
 
 pcolorgen("Processed Data/Interpolated/Thwaites_sh_ontoref_v3.txt");
-title("S & H 2013")
+title("S & H")
 
 subplot(3,3,2)
 pcolorgen("Processed Data/ISMIP6/Interp_v3/AWI_PISM1_ontoref.txt")
