@@ -13,43 +13,43 @@ fig = figure;
 
 subplot(3,3,1)
 
-ksll.serg = pcolorgen("Processed Data/Interpolated/Thwaites_sh_ontoref_v3.txt");
+ksll.serg = pcolorgen("sergienko_linterp2.txt");
 title("S & H")
 sgl = sgtitle("Deviation in Mean Basal Shear Stress, Low-Low");
 sgl.FontSize = 16;
 
 
 subplot(3,3,2)
-ksll.awipism1 = pcolorgen("Processed Data/ISMIP6/Interp_v3/AWI_PISM1_ontoref.txt");
-title("AWI PISM1, Standard")
+ksll.awipism1 = pcolorgen("awi_pism1_linterp2.txt");
+title("AWI PISM1")
 
 subplot(3,3,3)
-ksll.doemali = pcolorgen("Processed Data/ISMIP6/Interp_v3/DOE_MALI_ontoref.txt");
-title("DOE MALI, Standard")
+ksll.doemali = pcolorgen("doe_mali_linterp2.txt");
+title("DOE MALI")
 
 subplot(3,3,4)
-ksll.jpl1issm = pcolorgen("Processed Data/ISMIP6/Interp_v3/JPL1_ISSM_ontoref.txt");
-title("JPL1 ISSM, Standard")
+ksll.jpl1issm = pcolorgen("jpl1_issm_linterp2.txt");
+title("JPL1 ISSM")
 
 subplot(3,3,5)
-ksll.ncarcism = pcolorgen("Processed Data/ISMIP6/Interp_v3/NCAR_CISM_ontoref.txt");
-title("NCAR CISM, Standard")
+ksll.ncarcism = pcolorgen("ncar_cism_linterp2.txt");
+title("NCAR CISM")
 
 subplot(3,3,6)
-ksll.pikpism = pcolorgen("Processed Data/ISMIP6/Interp_v3/PIK_PISM1_ontoref.txt");
-title("PIK PISM, Open")
+ksll.pikpism = pcolorgen("pik_pism1_linterp2.txt");
+title("PIK PISM1")
 
 subplot(3,3,7)
-ksll.ucijpl = pcolorgen("Processed Data/ISMIP6/Interp_v3/UCIJPL_ISSM_ontoref.txt");
-title("UCIJPL ISSM, Open & Standard")
+ksll.ucijpl = pcolorgen("ucijpl_issm_linterp2.txt");
+title("UCIJPL ISSM")
 
 subplot(3,3,8)
-ksll.utaselmer = pcolorgen("Processed Data/ISMIP6/Interp_v3/UTAS_ElmerIce_ontoref.txt");
-title("UTAS ElmerIce, Standard")
+ksll.utaselmer = pcolorgen("utas_elmerice_linterp2.txt");
+title("UTAS ElmerIce")
 
 subplot(3,3,9)
-ksll.aismpaleo = pcolorgen("Processed Data/ISMIP6/Interp_v3/VUB_AISMPALEO_ontoref.txt");
-title("VUB AISMPALEO, Standard")
+ksll.aismpaleo = pcolorgen("vub_aismpaleo_linterp2.txt");
+title("VUB AISMPALEO")
 hp1 = get(subplot(3,3,9), 'Position');
 
 han = axes(fig, 'visible', 'off');
@@ -76,8 +76,8 @@ save('ksll_norandomsam_data.mat', 'ksll')
 function matrix = pcolorgen(filepath)
     %% Load Data 
 
-    data_specularity = importdata('Processed Data/Interpolated/Thwaites_specularity_ontoref_v2.txt');
-    data_reflectivity = importdata('Processed Data/Interpolated/Thwaites_Radar_v3.txt');
+    data_specularity = importdata('Thwaites_specularity_v3.txt');
+    data_reflectivity = importdata('Thwaites_radar_reflectivity_v3.txt');
 
     data_taub = importdata(filepath);
 

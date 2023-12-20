@@ -10,39 +10,39 @@ fig = figure;
 
 subplot(3,3,1)
 
-pcolorgen("Processed Data/Interpolated/Thwaites_sh_ontoref_v3.txt");
+pcolorgen("sergienko_linterp2.txt");
 title("S & H")
 
 subplot(3,3,2)
-pcolorgen("Processed Data/ISMIP6/Interp_v3/AWI_PISM1_ontoref.txt")
+pcolorgen("awi_pism1_linterp2.txt")
 title("AWI PISM1")
 
 subplot(3,3,3)
-pcolorgen("Processed Data/ISMIP6/Interp_v3/DOE_MALI_ontoref.txt")
+pcolorgen("doe_mali_linterp2.txt")
 title("DOE MALI")
 
 subplot(3,3,4)
-pcolorgen("Processed Data/ISMIP6/Interp_v3/JPL1_ISSM_ontoref.txt")
+pcolorgen("jpl1_issm_linterp2.txt")
 title("JPL1 ISSM")
 
 subplot(3,3,5)
-pcolorgen("Processed Data/ISMIP6/Interp_v3/NCAR_CISM_ontoref.txt")
+pcolorgen("ncar_cism_linterp2.txt")
 title("NCAR CISM")
 
 subplot(3,3,6)
-pcolorgen("Processed Data/ISMIP6/Interp_v3/PIK_PISM1_ontoref.txt")
+pcolorgen("pik_pism1_linterp2.txt")
 title("PIK PISM1")
 
 subplot(3,3,7)
-pcolorgen("Processed Data/ISMIP6/Interp_v3/UCIJPL_ISSM_ontoref.txt")
+pcolorgen("ucijpl_issm_linterp2.txt")
 title("UCIJPL ISSM")
 
 subplot(3,3,8)
-pcolorgen("Processed Data/ISMIP6/Interp_v3/UTAS_ElmerIce_ontoref.txt")
+pcolorgen("utas_elmerice_linterp2.txt")
 title("UTAS ElmerIce")
 
 subplot(3,3,9)
-pcolorgen("Processed Data/ISMIP6/Interp_v3/VUB_AISMPALEO_ontoref.txt")
+pcolorgen("vub_aismpaleo_linterp2.txt")
 title("VUB AISMPALEO")
 hp1 = get(subplot(3,3,9), 'Position');
 
@@ -53,11 +53,11 @@ yl = ylabel(han, 'Relative Reflectivity (dB)');
 hyl = get(yl, 'Position');
 yl.Position = [hyl(1)-0.01, hyl(2), hyl(3)];
 yl.FontSize = 16;
-xl = xlabel(han, 'Specularity');
+xl = xlabel(han, 'Specularity Content');
 hxl = get(xl, 'Position');
 xl.Position = [hxl(1), hxl(2)-0.01, hxl(3)];
 xl.FontSize = 16;
-caxis([-30 30])
+caxis([-20 20])
 c1 = colorbar;
 c1.Label.String = 'Deviation in Mean Shear Stress (kPa)';
 c1.Label.FontSize = 14;
@@ -70,8 +70,8 @@ c1.Position = [hp1(1)+hp1(3)+0.02  hp1(2)  0.015  hp1(4)*3.71];
 function pcolorgen(filepath)
     %% Load Data 
 
-    data_specularity = importdata('Processed Data/Interpolated/Thwaites_specularity_ontoref_v2.txt');
-    data_reflectivity = importdata('Processed Data/Interpolated/Thwaites_Radar_v3.txt');
+    data_specularity = importdata('Thwaites_specularity_v3.txt');
+    data_reflectivity = importdata('Thwaites_radar_reflectivity_v3.txt');
 
     data_taub = importdata(filepath);
 
@@ -119,7 +119,7 @@ function pcolorgen(filepath)
     %% Plotting
 
     h1 = pcolor(mean_m(51,[2:51]), mean_m([1:50],1), mean_m([1:50],[2:51]));
-    caxis([-30, 30])
+    caxis([-20, 20])
     colormap(brewermap([],'PiYG'));
     set(gca,'color',[0.5 0.5 0.5]);
     set(gca,'FontSize',16);

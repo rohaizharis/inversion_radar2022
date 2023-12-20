@@ -13,25 +13,25 @@ clear;clc;
 
 % Input filepath for inversion dataset files that have been interpolated
 % onto radar flight tracks
-st.hh.serg = pcolorgenhh("Processed Data/Interpolated/Thwaites_sh_ontoref_v3.txt");
-st.hh.awipism1 = pcolorgenhh("Processed Data/ISMIP6/Interp_v3/AWI_PISM1_ontoref.txt");
-st.hh.doemali = pcolorgenhh("Processed Data/ISMIP6/Interp_v3/DOE_MALI_ontoref.txt");
-st.hh.jpl1issm = pcolorgenhh("Processed Data/ISMIP6/Interp_v3/JPL1_ISSM_ontoref.txt");
-st.hh.ncarcism = pcolorgenhh("Processed Data/ISMIP6/Interp_v3/NCAR_CISM_ontoref.txt");
-st.hh.pikpism1 = pcolorgenhh("Processed Data/ISMIP6/Interp_v3/PIK_PISM1_ontoref.txt");
-st.hh.ucijpl = pcolorgenhh("Processed Data/ISMIP6/Interp_v3/UCIJPL_ISSM_ontoref.txt");
-st.hh.utaselmer = pcolorgenhh("Processed Data/ISMIP6/Interp_v3/UTAS_ElmerIce_ontoref.txt");
-st.hh.vubaismpaleo = pcolorgenhh("Processed Data/ISMIP6/Interp_v3/VUB_AISMPALEO_ontoref.txt");
+st.hh.serg = pcolorgenhh("sergienko_linterp2.txt");
+st.hh.awipism1 = pcolorgenhh("awi_pism1_linterp2.txt");
+st.hh.doemali = pcolorgenhh("doe_mali_linterp2.txt");
+st.hh.jpl1issm = pcolorgenhh("jpl1_issm_linterp2.txt");
+st.hh.ncarcism = pcolorgenhh("ncar_cism_linterp2.txt");
+st.hh.pikpism1 = pcolorgenhh("pik_pism1_linterp2.txt");
+st.hh.ucijpl = pcolorgenhh("ucijpl_issm_linterp2.txt");
+st.hh.utaselmer = pcolorgenhh("utas_elmer_linterp2.txt");
+st.hh.vubaismpaleo = pcolorgenhh("vub_aismpaleo_linterp2.txt");
 
-st.ll.serg = pcolorgenll("Processed Data/Interpolated/Thwaites_sh_ontoref_v3.txt");
-st.ll.awipism1 = pcolorgenll("Processed Data/ISMIP6/Interp_v3/AWI_PISM1_ontoref.txt");
-st.ll.doemali = pcolorgenll("Processed Data/ISMIP6/Interp_v3/DOE_MALI_ontoref.txt");
-st.ll.jpl1issm = pcolorgenll("Processed Data/ISMIP6/Interp_v3/JPL1_ISSM_ontoref.txt");
-st.ll.ncarcism = pcolorgenll("Processed Data/ISMIP6/Interp_v3/NCAR_CISM_ontoref.txt");
-st.ll.pikpism1 = pcolorgenll("Processed Data/ISMIP6/Interp_v3/PIK_PISM1_ontoref.txt");
-st.ll.ucijpl = pcolorgenll("Processed Data/ISMIP6/Interp_v3/UCIJPL_ISSM_ontoref.txt");
-st.ll.utaselmer = pcolorgenll("Processed Data/ISMIP6/Interp_v3/UTAS_ElmerIce_ontoref.txt");
-st.ll.vubaismpaleo = pcolorgenll("Processed Data/ISMIP6/Interp_v3/VUB_AISMPALEO_ontoref.txt");
+st.ll.serg = pcolorgenll("sergienko_linterp2.txt");
+st.ll.awipism1 = pcolorgenll("awi_pism1_linterp2.txt");
+st.ll.doemali = pcolorgenll("doe_mali_linterp2.txt");
+st.ll.jpl1issm = pcolorgenll("jpl1_issm_linterp2.txt");
+st.ll.ncarcism = pcolorgenll("ncar_cism_linterp2.txt");
+st.ll.pikpism1 = pcolorgenll("pik_pism1_linterp2.txt");
+st.ll.ucijpl = pcolorgenll("ucijpl_issm_linterp2.txt");
+st.ll.utaselmer = pcolorgenll("utas_elmerice_linterp2.txt");
+st.ll.vubaismpaleo = pcolorgenll("vub_aismpaleo_linterp2.txt");
 
 save('pcolor_all.mat', 'st')
 
@@ -39,8 +39,8 @@ save('pcolor_all.mat', 'st')
 function pcolor_arr = pcolorgenhh(filepath)
     %% Load Data 
 
-    data_specularity = importdata('Processed Data/Interpolated/Thwaites_specularity_ontoref_v2.txt');
-    data_reflectivity = importdata('Processed Data/Interpolated/Thwaites_Radar_v3.txt');
+    data_specularity = importdata('Thwaites_specularity_v3.txt');
+    data_reflectivity = importdata('Thwaites_radar_reflectivity_v3.txt');
 
     data_taub = importdata(filepath);
 
@@ -93,8 +93,8 @@ end
 function pcolor_arr = pcolorgenll(filepath)
     %% Load Data 
 
-    data_specularity = importdata('Processed Data/Interpolated/Thwaites_specularity_ontoref_v2.txt');
-    data_reflectivity = importdata('Processed Data/Interpolated/Thwaites_Radar_v3.txt');
+    data_specularity = importdata('Thwaites_specularity_v3.txt');
+    data_reflectivity = importdata('Thwaites_radar_reflectivity_v3.txt');
 
     data_taub = importdata(filepath);
 

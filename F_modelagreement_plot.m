@@ -7,9 +7,9 @@
 %% Code
 
 clear;clc;
-data_specularity = importdata('Processed Data/Interpolated/Thwaites_specularity_ontoref_v2.txt');
+data_specularity = importdata('Thwaites_specularity_v3.txt');
 filename = ["serg", "awipism1", "doemali", "jpl1issm", "ncarcism", "pikpism1", "ucijpl", "utaselmer", "vubaismpaleo"];
-data_reflectivity = importdata('Processed Data/Interpolated/Thwaites_Radar_v3.txt');
+data_reflectivity = importdata('Thwaites_radar_reflectivity_v3.txt');
 reflectivity = data_reflectivity(:,9);
 specularity = data_specularity(:,3);
 
@@ -174,7 +174,7 @@ yl = ylabel(han, 'Relative Reflectivity (dB)');
 hyl = get(yl, 'Position');
 yl.Position = [hyl(1)-0.01, hyl(2), hyl(3)];
 yl.FontSize = 20;
-xl = xlabel(han, 'Specularity');
+xl = xlabel(han, 'Specularity Content');
 hxl = get(xl, 'Position');
 xl.Position = [hxl(1), hxl(2)-0.01, hxl(3)];
 xl.FontSize = 20;

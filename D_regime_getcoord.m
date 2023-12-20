@@ -12,15 +12,15 @@ clear;clc;
 
 clear;clc;
 
-data_specularity = importdata('Processed Data/Interpolated/Thwaites_specularity_ontoref_v2.txt');
-data_reflectivity = importdata('Processed Data/Interpolated/Thwaites_Radar_v3.txt');
+data_specularity = importdata('Thwaites_specularity_v3.txt');
+data_reflectivity = importdata('Thwaites_radar_reflectivity_v3.txt');
 
-data_serg_taub = importdata("Processed Data/Interpolated/Thwaites_sh_ontoref_v3.txt");
+data_ncar_taub = importdata("ncar_cism_linterp2.txt");
 
 reflectivity = data_reflectivity(:,9);
 specularity = data_specularity(:,3);
-serg_taub = data_serg_taub(:,3);
-coord_template = data_serg_taub(:,[1,2]);
+ncar_taub = data_ncar_taub(:,3);
+coord_template = data_ncar_taub(:,[1,2]);
 
 
 %Creates intervals for ref & spec thresholds
@@ -39,7 +39,7 @@ for i = 1:50
     for j = 1:50
         mask = specularity > template(51,i+1) & reflectivity > template(j,1);
          
-        mod_masked = serg_taub(mask);
+        mod_masked = ncar_taub(mask);
         
         if sum(~isnan(mod_masked)) >= 100 && sum(~isnan(mod_masked)) <= 103223*0.7
             %mod_masked = mod_masked(~isnan(mod_masked));
@@ -53,7 +53,7 @@ for i = 1:50
     end
 end
 
-coord = data_serg_taub(mask_store,:);
+coord = data_ncar_taub(mask_store,:);
 mask1 = isnan(coord(:,3));
 coord = coord(~mask1,:);
 coordnan = coord(mask1,:);
@@ -69,15 +69,15 @@ scatter(coord(:,1), coord(:,2))
 clear;clc;
 clear;clc;
 
-data_specularity = importdata('Processed Data/Interpolated/Thwaites_specularity_ontoref_v2.txt');
-data_reflectivity = importdata('Processed Data/Interpolated/Thwaites_Radar_v3.txt');
+data_specularity = importdata('Thwaites_specularity_v3.txt');
+data_reflectivity = importdata('Thwaites_radar_reflectivity_v3.txt');
 
-data_serg_taub = importdata("Processed Data/Interpolated/Thwaites_sergienko_ontoref_v3.txt");
+data_ncar_taub = importdata("ncar_cism_linterp2.txt");
 
 reflectivity = data_reflectivity(:,9);
 specularity = data_specularity(:,3);
-serg_taub = data_serg_taub(:,3);
-coord_template = data_serg_taub(:,[1,2]);
+ncar_taub = data_ncar_taub(:,3);
+coord_template = data_ncar_taub(:,[1,2]);
 
 
 %Creates intervals for ref & spec thresholds
@@ -96,7 +96,7 @@ for i = 1:50
     for j = 1:50
         mask = specularity > template(51,i+1) & reflectivity > template(j,1);
          
-        mod_masked = serg_taub(mask);
+        mod_masked = ncar_taub(mask);
         
         if sum(~isnan(mod_masked)) >= 100 && sum(~isnan(mod_masked)) <= 103223*0.7
 %             mod_masked = mod_masked(~isnan(mod_masked));
@@ -110,7 +110,7 @@ for i = 1:50
     end
 end
 
-coord = data_serg_taub(mask_store,:);
+coord = data_ncar_taub(mask_store,:);
 mask1 = isnan(coord(:,3));
 % coordnan = coord(mask1,:);
 coord = coord(~mask1,:);
@@ -127,15 +127,15 @@ hold on
 clear;clc;
 clear;clc;
 
-data_specularity = importdata('Processed Data/Interpolated/Thwaites_specularity_ontoref_v2.txt');
-data_reflectivity = importdata('Processed Data/Interpolated/Thwaites_Radar_v3.txt');
+data_specularity = importdata('Thwaites_specularity_v3.txt');
+data_reflectivity = importdata('Thwaites_radar_reflectivity_v3.txt');
 
-data_serg_taub = importdata("Processed Data/Interpolated/Thwaites_sergienko_ontoref_v3.txt");
+data_ncar_taub = importdata("ncar_cism_linterp2.txt");
 
 reflectivity = data_reflectivity(:,9);
 specularity = data_specularity(:,3);
-serg_taub = data_serg_taub(:,3);
-coord_template = data_serg_taub(:,[1,2]);
+ncar_taub = data_ncar_taub(:,3);
+coord_template = data_ncar_taub(:,[1,2]);
 
 
 %Creates intervals for ref & spec thresholds
@@ -154,7 +154,7 @@ for i = 1:50
     for j = 1:50
         mask = specularity < template(51,i+1) & reflectivity < template(j,1);
          
-        mod_masked = serg_taub(mask);
+        mod_masked = ncar_taub(mask);
         
         if sum(~isnan(mod_masked)) >= 100 && sum(~isnan(mod_masked)) <= 103223*0.7
             %mod_masked = mod_masked(~isnan(mod_masked));
@@ -169,7 +169,7 @@ for i = 1:50
     end
 end
 
-coord = data_serg_taub(mask_store,:);
+coord = data_ncar_taub(mask_store,:);
 mask1 = isnan(coord(:,3));
 coord = coord(~mask1,:);
 %coordnan = coord(mask1,:);
