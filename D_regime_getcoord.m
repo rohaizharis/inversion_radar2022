@@ -1,7 +1,7 @@
 %% Notes
 
 % Gets the coordinates for the 3 regimes of significant deviation and
-% exports them to a file for use with D_histogram.m and ArcGIS
+% exports them to a file for use with F_histogram.m and ArcGIS
 
 % Ranges are as follows: 
 % (1) All ref, 0.9 - 1 (2) 20 - 30 dB, 0 - 0.15, (3) -30 to -20 dB, 0.2 - 1
